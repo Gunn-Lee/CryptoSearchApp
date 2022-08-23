@@ -1,13 +1,373 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 16px;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  background-color: #efefef;
+}
+
+#root {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+
+.App {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+main {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+main.CoinInfo {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.CoinInfoContainer {
+  margin-top: 3%;
+  width: 70%;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Header, .Footer {
+  width: 100vw;
+  background-color: lightseagreen;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Header h1 {
+  font-size: 1.5rem;
+}
+
+.HeaderLoginButton {
+  width: 10rem;
+  height: 1.5rem;
+  border: 0;
+}
+
+.HeaderLoginBox {
+  margin: .2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.HeaderLoginBox button {
+  margin-top: .5rem;
+  border: 0;
+}
+
+.loading {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.Login, .Register {
+  margin-top: 20%;
+  height: 50vh;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Login h2, .Register h2 {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.LoginForm {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+.LoginForm input {
+  margin-right: 10px;
+  height: 1.5rem;
+}
+
+.LoginForm section {
+  width: 55%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+}
+
+.LoginForm .LoginButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.LoginForm button {
+  width: 90%;
+}
+
+.LoginForm p.LogintoRegister {
+  margin-top: 2rem;
+  font-size: small;
+}
+
+.backhome {
+  margin-top: 2rem;
+}
+
+.Nav {
+  width: 100%;
+  height: auto;
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Search {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 80%;
+  padding: 0.4rem;
+}
+
+.Search input[type="text"] {
+  font-family: 'Open Sans', sans-serif;
+  width: 45%;
+  min-height: 35px;
+  font-size: 1rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  outline: none;
+}
+
+.Nav_ClickBox {
+  margin-top: 0;
+}
+
+.Nav_button {
+  padding: 0.5rem;
+  min-width: 8rem;
+  height: auto;
+  background-color: #efefef;
+  border: 1px solid #333;
+}
+
+.Nav_button_dark {
+  padding: 0.5rem;
+  min-width: 8rem;
+  height: auto;
+  background-color: lightgrey;
+  border: 1px solid #333;
+}
+
+h2.Trending_title, h2.Mover_title {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.Trending, .Mover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.TrendingBar, .MoverBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 75%;
+  height: 12rem;
+  margin-bottom: 1rem;
+  overflow: auto;
+}
+
+.TrendingBox, .MoverBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  width: 7rem;
+  text-align: center;
+}
+
+.TrendingBox p {
+  width: auto;
+  margin-top: 0.2rem;
+  margin-left: 0.5rem;
+  font-weight: bold;
+  font-size: small;
+}
+
+.MoverBox p {
+  font-size: small;
+  font-weight: bold;
+  margin-top: 3px;
+}
+
+.MoverBar img {
+  max-width: 2rem;
+}
+
+.List {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.FavList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+table{
+  width: 80%;
+  padding: 1rem;
+}
+
+.List_title {
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  align-items: center;
+}
+
+.List_title img {
+  max-width: 1.2rem;
+  margin-right: 1.2rem;
+}
+
+.List th, td {
+  text-align: start;
+  margin-right: 10px;
+  border-bottom: 0.7px solid darkgray;
+  padding: 0.5rem;
+}
+
+.CoinLogo {
+  height: 1rem;
+  vertical-align: middle;
+}
+
+.Price_Minus {
+  color: red;
+}
+.Price_Plus {
+  color: green;
+}
+
+/* register */
+
+.Register form {
+  display: flex;
+  flex-direction: column;
+  min-width: 450px;
+}
+
+.Register h2 {
+  margin-bottom: 0;
+}
+
+.Register 
+label,
+button {
+  margin-top: 1rem;
+  font-size: medium;
+}
+
+.Register 
+button {
+  padding: 0.5rem;
+}
+
+.instructions {
+    font-size: 0.75rem;
+    border-radius: 0.5rem;
+    background: #000;
+    color: #fff;
+    padding: 0.25rem;
+    position: relative;
+    bottom: -10px;
+}
+
+.instructions > svg {
+    margin-right: 0.25rem;
+}
+
+.offscreen {
+    position: absolute;
+    left: -9999px;
+}
+
+.hide {
+    display: none;
+}
+
+.valid {
+    color: limegreen;
+    margin-left: 0.25rem;
+}
+
+.invalid {
+    color: red;
+    margin-left: 0.25rem;
+}
+
+.errmsg {
+    background-color: lightpink;
+    color: firebrick;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
 }

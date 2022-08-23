@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "user": "admin",
+      "pwd": "1234",
+      "fav": [
+        "btc",
+        "eth",
+        "usdt",
+        "bnb",
+        "ldo"
+      ]
+    },
+    {
+      "id": 2,
+      "user": "aaaA",
+      "pwd": "aaaA1234!",
+      "fav": []
+    },
+    {
+      "id": 3,
+      "user": "bbbb",
+      "pwd": "bbbb1111!B",
+      "fav": []
+    },
+    {
+      "id": 4,
+      "user": "aaaA",
+      "pwd": "1234!aaaA",
+      "fav": []
+    },
+    {
+      "id": 5,
+      "user": "gunn",
+      "pwd": "Llll1234!",
+      "fav": []
+    }
+  ]
+}
